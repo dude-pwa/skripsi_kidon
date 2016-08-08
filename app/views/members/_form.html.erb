@@ -1,0 +1,55 @@
+<%= form_for @member, :html => { :class => "form-horizontal member" } do |f| %>
+
+  <% if @member.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @member.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nama, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nama, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nama) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tanggal_lahir, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.date_select :tanggal_lahir, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 23, end_year: Date.today.year - 100}, {required: true} %>
+    </div>
+    <%=f.error_span(:tanggal_lahir) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :handphone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field :handphone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:handphone) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :alamat, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :alamat, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:alamat) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                members_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,44 @@
+// Place all the styles related to the members controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box {
+	background: rgba(22, 22, 22, 0.5);
+	margin-top: -80%;
+  width: 700px;
+  height: 300px;
+  padding: 50px;
+  border: 1px solid red;
+  color: #fff;
+}
+
+.box-devise {
+	background: rgba(22, 22, 22, 0.5);
+	margin-top: -80%;
+  width: 700px;
+  height: 350px;
+  padding: 50px;
+  border: 1px solid red;
+  color: #fff;
+}
+
+.box h3, .box a{
+	color: #fff;
+}
+
+.box-devise a{
+	color: #ccc;
+}
+.white-text{
+ 	color: #fff;
+}
+
+.black-text{
+ 	color: #000;
+}
+
+.background{
+	margin-left: -20%;
+	position: relative;
+	z-index: -1;
+}

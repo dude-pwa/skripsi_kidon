@@ -1,0 +1,27 @@
+<%- model_class = Bobot -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:w1) %>:</strong></dt>
+  <dd><%= @bobot.w1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:w2) %>:</strong></dt>
+  <dd><%= @bobot.w2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:w3) %>:</strong></dt>
+  <dd><%= @bobot.w3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:w4) %>:</strong></dt>
+  <dd><%= @bobot.w4 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:w5) %>:</strong></dt>
+  <dd><%= @bobot.w5 %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              bobots_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_bobot_path(@bobot), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              bobot_path(@bobot),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

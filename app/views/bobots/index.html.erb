@@ -1,0 +1,48 @@
+<%- model_class = Bobot -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:w1) %></th>
+      <th><%= model_class.human_attribute_name(:w2) %></th>
+      <th><%= model_class.human_attribute_name(:w3) %></th>
+      <th><%= model_class.human_attribute_name(:w4) %></th>
+      <th><%= model_class.human_attribute_name(:w5) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bobots.each do |bobot| %>
+      <tr>
+        <td><%= link_to bobot.id, bobot_path(bobot) %></td>
+        <td><%= bobot.w1 %></td>
+        <td><%= bobot.w2 %></td>
+        <td><%= bobot.w3 %></td>
+        <td><%= bobot.w4 %></td>
+        <td><%= bobot.w5 %></td>
+        <td><%=l bobot.created_at %></td>
+        <td>
+        <% if coach_signed_in? && current_coach.role == 'Asisten Pelatih' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_bobot_path(bobot), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      bobot_path(bobot),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if coach_signed_in? && current_coach.role == 'Asisten Pelatih' %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_bobot_path,
+            :class => 'btn btn-primary' %>
+<% end %>

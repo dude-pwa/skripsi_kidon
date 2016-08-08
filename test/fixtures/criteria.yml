@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tinggi_badan: 1.5
+  berat_badan: 1.5
+  kecepatan_berlari: 1.5
+  akurasi_tendangan: MyString
+  prestasi: 1.5
+  member_id: 
+  group_id: 
+
+two:
+  tinggi_badan: 1.5
+  berat_badan: 1.5
+  kecepatan_berlari: 1.5
+  akurasi_tendangan: MyString
+  prestasi: 1.5
+  member_id: 
+  group_id: 
