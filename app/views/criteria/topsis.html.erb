@@ -19,7 +19,7 @@
       <th><%= model_class.human_attribute_name(:berat_badan) %></th>
       <th><%= model_class.human_attribute_name(:kecepatan_berlari) %></th>
       <th><%= model_class.human_attribute_name(:akurasi_tendangan) %></th>
-      <th><%= model_class.human_attribute_name(:prestasi) %></th>
+      <th><%= model_class.human_attribute_name(:mental_bertanding) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -44,7 +44,7 @@
         <td><%= criterium.berat_badan %></td>
         <td><%= criterium.kecepatan_berlari %></td>
         <td><%= criterium.akurasi_tendangan %></td>
-        <td><%= criterium.prestasi %></td>
+        <td><%= criterium.mental_bertanding %></td>
         <td><%=l criterium.created_at %></td>
         <td>
         <% if coach_signed_in? && current_coach.role == 'Asisten Pelatih' %>
@@ -71,7 +71,7 @@
 		<td>Berat Badan</td>
 		<td>Kecepatan Berlari</td>
 		<td>Akurasi Tendangan</td>
-		<td>Prestasi</td>
+		<td>Mental Bertanding</td>
 	</tr>
 	<tr>
 		<td><%= @a1 %></td>

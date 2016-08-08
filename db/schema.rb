@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723093652) do
+ActiveRecord::Schema.define(version: 20160808084855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160723093652) do
     t.float    "berat_badan"
     t.float    "kecepatan_berlari"
     t.string   "akurasi_tendangan"
-    t.float    "prestasi"
+    t.float    "mental_bertanding"
     t.integer  "member_id"
     t.integer  "group_id"
     t.datetime "created_at",        null: false

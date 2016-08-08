@@ -6,7 +6,7 @@ class Criterium < ActiveRecord::Base
   validates :berat_badan, presence: true
   validates :kecepatan_berlari, presence: true
   validates :akurasi_tendangan, presence: true
-  validates :prestasi, presence: true
+  validates :mental_bertanding, presence: true
 
   def logika_bobot
   	if criterium.tinggi_badan > 155

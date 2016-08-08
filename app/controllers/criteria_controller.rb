@@ -64,7 +64,7 @@ class CriteriaController < ApplicationController
           self.instance_variable_set "@a#{i}c2", criterium.berat_badan 
           self.instance_variable_set "@a#{i}c3", criterium.kecepatan_berlari 
           self.instance_variable_set "@a#{i}c4", criterium.akurasi_tendangan.to_i
-          self.instance_variable_set "@a#{i}c5", criterium.prestasi 
+          self.instance_variable_set "@a#{i}c5", criterium.mental_bertanding 
         i+=1  
       end
 
@@ -229,7 +229,7 @@ class CriteriaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def criterium_params
-      params.require(:criterium).permit(:tinggi_badan, :berat_badan, :kecepatan_berlari, :akurasi_tendangan, :prestasi, :member_id, :group_id)
+      params.require(:criterium).permit(:tinggi_badan, :berat_badan, :kecepatan_berlari, :akurasi_tendangan, :mental_bertanding, :member_id, :group_id)
     end
 
     # def rekap_datum_params
